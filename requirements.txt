@@ -1,0 +1,11 @@
+streamlit
+pandas
+openpyxl
+pymupdf
+opencv-python-headless
+Pillow
+langchain
+langchain-google-genai
+tqdm
+httpx
+numpy
