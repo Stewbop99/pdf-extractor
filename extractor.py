@@ -542,17 +542,17 @@ def run_extraction(pdf_path, pages):
     # 1. EXTRACT CSVs (UNCHANGED LOGIC)
     # ============================================================
     for page_num in pages:
-        st.write(f"Extracting page {page_num}…")
+        st.write(f"Extracting page {page_num + 1}…")
 
         try:
             csv_path = extract_single_page(pdf_path, page_num, pdf_prefix)
             if csv_path:
-                st.success(f"Page {page_num} extracted → {csv_path}")
+                st.success(f"Page {page_num + 1} extracted → {csv_path}")
                 extracted_csvs.append(csv_path)
             else:
-                st.error(f"Page {page_num} returned no CSV.")
+                st.error(f"Page {page_num + 1} returned no CSV.")
         except Exception as e:
-            st.error(f"Page {page_num} failed: {e}")
+            st.error(f"Page {page_num + 1} failed: {e}")
             continue
 
     # ============================================================

@@ -38,9 +38,9 @@ def parse_pages(pages_str, pdf_path):
             part = part.strip()
             if "-" in part:
                 a, b = part.split("-")
-                pages.extend(range(int(a), int(b) + 1))
+                pages.extend(range(int(a) - 1, int(b)))
             else:
-                pages.append(int(part))
+                pages.append(int(part) - 1)
 
         return sorted(set(pages))
 
@@ -64,6 +64,7 @@ if uploaded:
 
     # PAGE INPUT
     pages_input = st.text_input("Pages to extract", value="all")
+    
 
     # PARSE PAGES
     pages = parse_pages(pages_input, pdf_path)
